@@ -1,0 +1,52 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{alltt,epsfig,amsmath,amssymb}
+\usepackage{fullpage} % one inch margins
+
+\usepackage{listings}
+\lstset{
+  breaklines=true,
+  keepspaces=true,
+  numbers=left
+}
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+  \fancyhf{}% Clear header/footer
+  \fancyhead[L]{TEAM NAME HERE}
+  \fancyfoot[C]{\thepage}
+  \fancyhead[R]{COMS 4112}
+}
+
+\pagestyle{plain}% Set page style to plain.
+
+\author{GROUP MEMBERS + UNI}
+\title{TITLE}
+
+
+\begin{document}
+\setlength{\parskip}{.1 in}
+
+\maketitle
+\newpage
+
+\subsection*{Introduction}
+
+INTRO HERE
+
+\section*{Testing}
+\input{testing} \newpage
+
+\section*{Management}
+\input{management} \newpage
+
+\section*{Architecture}
+\input{architecture} \newpage
+
+
+% citations
+% \include{bib/main}
+
+\end{document}
+
