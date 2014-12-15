@@ -1,20 +1,4 @@
-# RAPID Language Reference Manual
-
-## Coms W 4115
-
-Ben Edelstein, Brian Shin, Brendon Fish, Dan Schlosser, Nate Brennand
-
-## 1. Introduction
-
-With increased demand in the public and private sector for cloud-connected mobile and web applications has come a rising need for web servers to maintain state across multiple devices and users. Development of web servers is complex, however. Building a web server using modern web server packages requires learning a server-side programming language, and then integrating a web server package and implementing required methods. Furthermore, local testing and development of these servers is excessively complex, as they have numerous dependencies and are difficult to build.
-
-RAPID is a programming language intended specifically for the rapid development of modern web APIs. Using RAPID, developers can quickly build a database-backed REST API server that guarantees JSON shapes in responses. RAPID is object oriented and database-backed, meaning that classes represent an SQL table, and upon instantiation objects are automatically saved in the database. This abstracts away much of the boiler plate code that developers typically write when building an API server. 
-
-### 1.1 Why RAPID?
-
-The name RAPID represents the goal of the language: making API server development quick. Also, it's a recursive acronym for *RAPID Application Programmer Interface Dialect*.
-
-### 1.2 RAPID Programs
+## 1 RAPID Programs
 
 There are two types of RAPID programs, servers and scripts. If a program contains an HTTP method, it is a server, otherwise it is a script. (See more in later sections). 
 
