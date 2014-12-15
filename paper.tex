@@ -14,15 +14,15 @@
 \usepackage{fancyhdr}
 \fancypagestyle{plain}{
   \fancyhf{}% Clear header/footer
-  \fancyhead[L]{TEAM NAME HERE}
+  \fancyhead[L]{RAPID}
   \fancyfoot[C]{\thepage}
   \fancyhead[R]{COMS 4115}
 }
 
 \pagestyle{plain}% Set page style to plain.
 
-\author{GROUP MEMBERS + UNI}
-\title{TITLE}
+\author{Nate Brennand (xxx1234), Dan Schlosser (drs2126), Ben Edelstein (bie2103), Brian Shin (xxx1234), Brendan Fish (xxx1234)}
+\title{The RAPID Programming Language}
 
 
 \begin{document}
@@ -33,19 +33,40 @@
 
 \subsection*{Introduction}
 
-INTRO HERE
+With increased demand in the public and private sector for cloud-connected mobile and web applications has come a rising need for web servers to maintain state across multiple devices and users. Development of web servers is complex, however. Building a web server using modern web server packages requires learning a server-side programming language, and then integrating a web server package and implementing required methods. Furthermore, local testing and development of these servers is excessively complex, as they have numerous dependencies and are difficult to build.
 
-\section*{Testing}
+RAPID is a programming language intended specifically for the rapid development of modern web APIs. Using RAPID, developers can quickly build a database-backed REST API server that guarantees JSON shapes in responses. RAPID is object oriented and database-backed, meaning that classes represent an SQL table, and upon instantiation objects are automatically saved in the database. This abstracts away much of the boiler plate code that developers typically write when building an API server. 
+
+1.1 Why RAPID?
+
+The name RAPID represents the goal of the language: making API server development quick. Also, it's a recursive acronym for \textit{RAPID Application Programmer Interface Dialect}.
+
+\section*{Tutorial}
+\input{tutorial} \newpage
+
+\section*{Language Reference Manual}
 \input{testing} \newpage
 
-\section*{Management}
-\input{management} \newpage
+\section*{Project Plan}
+\input{plan} \newpage
+
+\section*{Language Evolution}
+\input{testing} \newpage
+
+\section*{Translator Architecture}
+\input{testing} \newpage
 
 \section*{Architecture}
 \input{architecture} \newpage
 
-\section*{LRM}
-\input{architecture} \newpage
+\section*{Test Plan and Scripts}
+\input{LRM/test} \newpage
+
+\section*{Conclusions}
+\input{testing} \newpage
+
+\section*{Full Code Listing}
+\input{testing} \newpage
 
 
 % citations
