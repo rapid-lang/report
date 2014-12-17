@@ -3,6 +3,9 @@
 paper.pdf
 *.pdf
 
+# generated file
+code.tex
+
 # latex junk
 *.log
 *.aux

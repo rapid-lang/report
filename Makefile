@@ -31,8 +31,8 @@ all: paper.pdf
 # missing file reference and interactively asking you for an alternative.
 #
 paper.pdf: paper.tex
-	pdflatex paper.tex
-
+	bash get_file_names.sh
+	latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make paper.tex
 
 
 clean:
