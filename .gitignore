@@ -1,6 +1,7 @@
 
 # binaries
 paper.pdf
+*.pdf
 
 # latex junk
 *.log
