@@ -5,7 +5,8 @@ tex_destination="code.tex"
 reduce_path_to_test_name () {
     local fullpath=$1
     local filename="${fullpath##*/}" # strip the preceding path
-    test_name="${filename%.*}"       # strip the file type & set a global variable
+    file_name="${filename%.*}"       # strip the file type & set a global variable
+    latex_file_name=$(echo "$file_name" | sed -E "s/\_/\\\_/g")
 }
 
 # GENERATED FORMAT
@@ -19,7 +20,8 @@ list_files () { # pass in a pattern
     for file in $(find rapid/ -name *\.$1)
     do
         reduce_path_to_test_name "$file"
-        echo "$test_name" >> "$tex_destination"
+        # echo "$test_name" | sed -E "s/\_/\\\_/g" >> "$tex_destination"
+        echo "$latex_file_name" >> "$tex_destination"
         echo "" >> $tex_destination
         echo "\begin{verbatim}" >> $tex_destination
         cat "$file" >> "$tex_destination"
