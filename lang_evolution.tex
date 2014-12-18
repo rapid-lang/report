@@ -1,0 +1,65 @@
+In our LRM, we set out to create an extremely ambitious language.  Throughout
+the course of our projet, we adjusted our goals, removing or modifying language
+features as we saw fit.  The evolution of RAPID can be seen through the
+examination of several features that existed in one form in our original LRM,
+and exist in a different form in our current version of RAPID.
+
+\subsection*{4.1.1 Errors}
+
+In our LRM, we sought out to create a system of errors that included what we
+called unsafe functions.  Unsafe functions would be labeled as unsafe, and then
+returned their return type as well as an Error.  Operations like dictionary
+accesses, list accesses, database operations, and the like would all be unsafe.
+
+Here is an example unsafe function, from our LRM.
+
+\begin{verbatim}
+unsafe func access(dict<string, int> d, string key) int {
+    int val, error error = d[key]
+    return val, error
+}
+\end{verbatim}
+
+Implementing Errors as desired was out of scope for us, and so we do not allow
+unsafe functions.
+The implications of this have been felt in other language features as well. We
+wanted to allow users to return \texttt{null, Error} to throw an error, no
+matter the return type.  To do this, we had to make all of our objects nullable.
+Although we do not allow unsafe functions, we do allow multiple return types
+for functions, as well as nullable primitives to faciltiate errros.
+
+\subsection*{4.1.2 Database backing}
+
+One of the features we hoped to implement in RAPID was the ability to persist
+instances of classes in a postgres database.  Then, using API calls, users
+could interact with their data over an API written in RAPID.  This code would
+have been primarily written in Go however, and because our team was relatively
+inexperienced in Go, what resources we could have spent implementing database
+backing were instead spent on code generation.
+
+\subsection*{4.1.3 Arguments to functions over HTTP}
+
+Our LRM originally portrayed three different ways to pass data to a route: as
+paramters within the URL path for the request, as query string arguments in the
+request, and as JSON POSTed in the request body.  Because of this, we defined
+our \texttt{http} functions to take in URL path params using \texttt{param}
+blocks, query string arguments in the parenthesis of the function args, and
+finally JSON as the final parameter.  The following defines code block from
+our LRM describes our intention to do this.
+
+\begin{verbatim}
+http /* id */ ( /* path args */ /* formal args */ /* request body args */) {
+    // statements
+}
+\end{verbatim}
+
+However, because we were unable to facilitate arguments from the query string
+or the response body, including the path args in the parenthesis of the function
+is superfluous.  Despite this, that is how we have implemented http functions in
+our current version of RAPID.
+
+\subsection*{4.1.4 Summary}
+
+In summary, our language has evolved and simplified greatly over the semester.
+We are proud of RAPID, and it has been exciting to observe how the language has
+changed over the course of its development.
