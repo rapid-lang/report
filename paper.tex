@@ -1,6 +1,6 @@
 
 \documentclass[11pt]{article}
-
+\usepackage{graphicx}
 \usepackage{alltt,epsfig,amsmath,amssymb}
 % one inch margins
 \usepackage{fullpage}
@@ -23,11 +23,11 @@
 \pagestyle{plain}% Set page style to plain.
 
 \author{
-  Nate Brennand (nsb2142),
-  Dan Schlosser (drs2126),
-  Ben Edelstein (bie2103),
-  Brian Shin (ds2791),
-  Brendan Fish (bjf2127)
+  Nate Brennand (nsb2142)
+  \and Dan Schlosser (drs2126),
+  \and Ben Edelstein (bie2103),
+  \and Brian Shin (ds2791),
+  \and Brendan Fish (bjf2127)
 }
 \title{The RAPID Programming Language}
 
@@ -38,7 +38,7 @@
 \maketitle
 \newpage
 
-\subsection*{Introduction}
+\subsection*{1. Introduction}
 
 With increased demand in the public and private sector for cloud-connected mobile and web applications has come a rising need for web servers to maintain state across multiple devices and users.
 Development of web servers is complex, however. Building a web server using modern web server packages requires learning a server-side programming language, and then integrating a web server package and implementing required methods.
@@ -57,39 +57,39 @@ Also, it's a recursive acronym for \textit{RAPID Application Programmer Interfac
 
 
 
-\section*{Tutorial}
+\section*{2. Tutorial}
 \input{tutorial}
 \newpage
 
-\section*{Language Reference Manual}
+\section*{3. Language Reference Manual}
 \input{lrm}
 \newpage
 
-\section*{Project Plan}
+\section*{4. Project Plan}
 \input{plan}
 \newpage
 
-\section*{Language Evolution}
+\section*{4.1 Language Evolution}
 \input{lang_evolution}
 \newpage
 
-\section*{Translator Architecture}
+\section*{4.2 Translator Architecture}
 \input{translator_architecture}
 \newpage
 
-\section*{Architecture}
+\section*{5. Architecture}
 \input{architecture}
 \newpage
 
-\section*{Test Plan and Scripts}
-% TODO: fix this file
-% \input{LRM/test} \newpage
-
-\section*{Conclusions}
-\input{conclusion}
+\section*{6. Test Plan and Scripts}
+\input{testing}
 \newpage
 
-\section*{Full Code Listing}
+\section*{7. Lessons Learned}
+\input{lessons}
+\newpage
+
+\section*{8. Appendix}
 \input{code}
 \newpage
 
