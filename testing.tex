@@ -1,0 +1,250 @@
+\subsection*{6.1 Representative Programs}
+
+
+\subsubsection*{gcd\_server.rapid}
+
+\begin{verbatim}
+
+func gcd(int p, int q) int {
+    while (q != 0) {
+        int temp = q;
+        q = p % q;
+        p = temp;
+    }
+    return p;
+}
+
+namespace gcd {
+    param int a {
+        param int b {
+            http (int a, int b) int {
+                int res = gcd(a, b);
+                return res;
+            }
+        }
+    }
+}
+
+\end{verbatim}
+
+\subsubsection*{gcd\_server.go}
+
+\begin{verbatim}
+
+package main
+
+import (
+    "fmt"
+    "github.com/julienschmidt/httprouter"
+    "log"
+    "net/http"
+)
+
+var _ = fmt.Printf
+var _ = http.StatusOK
+var _ = log.Fatal
+var _ = httprouter.CleanPath
+
+func HTTPgcdab(w http.ResponseWriter, r *http.Request, XXX httprouter.Params) {
+    var res Int
+
+    tmp_8860581127662105769 := XXX.ByName("b")
+    b := StringToInt(&tmp_8860581127662105769)
+    _ = b
+    tmp_8489902106938695875 := XXX.ByName("a")
+    a := StringToInt(&tmp_8489902106938695875)
+    _ = a
+    tmp_3192161587922682755 := *a
+    tmp_3651816005641979265 := *b
+    res = gcd(&tmp_3192161587922682755, &tmp_3651816005641979265)
+
+    tmp_6419075023523112259 := *res
+    w.Write([]byte(*IntToString(&tmp_6419075023523112259)))
+    return
+}
+
+func main() {
+
+    router := httprouter.New()
+    router.GET("/gcd/:a/:b/", HTTPgcdab)
+    log.Fatal(http.ListenAndServe(":8080", router))
+
+}
+func gcd(p Int, q Int) Int {
+
+    for {
+        tmp_7985179176134664640 := *q
+        tmp_4968362049263200281 := 0
+        tmp_2152367932835595560 := *&tmp_7985179176134664640 != *&tmp_4968362049263200281
+        if !(*(&tmp_2152367932835595560)) {
+            break
+        }
+        var temp Int
+        tmp_6575234515618809058 := *q
+        temp = &tmp_6575234515618809058
+
+        tmp_8175353689487733453 := *p
+        tmp_7976305469002585692 := *q
+        tmp_1330295997928933460 := *&tmp_8175353689487733453 % *&tmp_7976305469002585692
+        q = &tmp_1330295997928933460
+
+        tmp_8211254607639216761 := *temp
+        p = &tmp_8211254607639216761
+    }
+
+    tmp_286320284431439979 := *p
+    return &tmp_286320284431439979
+}
+
+\end{verbatim}
+
+\subsubsection*{oop.rapid}
+
+\begin{verbatim}
+
+class User {
+    int age;
+    string name = "Stephen";
+    optional int height;
+
+    instance my {
+        func is_old() boolean {
+            return (my.age >= 30);
+        }
+        func make_older() {
+           my.age = my.age + 1;
+        }
+    }
+}
+
+User stephen = new User(age=29);
+println(stephen.age);
+stephen.height = 73;
+println(stephen.height);
+
+if (stephen.is_old()) {
+   println("Stephen is old");
+}
+else {
+    println("Stephen is young");
+}
+stephen.make_older();
+if (stephen.is_old()) {
+   println("Stephen is old");
+}
+
+\end{verbatim}
+
+\subsubsection*{oop.go}
+
+\begin{verbatim}
+
+package main
+
+import (
+	"fmt"
+	"github.com/julienschmidt/httprouter"
+	"log"
+	"net/http"
+)
+
+var _ = fmt.Printf
+var _ = http.StatusOK
+var _ = log.Fatal
+var _ = httprouter.CleanPath
+
+type User struct {
+	height Int
+	name   String
+	age    Int
+}
+
+func main() {
+	tmp_7985179176134664640 := 29
+
+	tmp_4968362049263200281 := "Stephen"
+	stephen := User{
+		age:    &tmp_7985179176134664640,
+		height: nil,
+		name:   &tmp_4968362049263200281,
+	}
+
+	_ = stephen
+	tmp_6575234515618809058 := &stephen
+	tmp_2152367932835595560 := (*tmp_6575234515618809058).age
+
+	println(*tmp_2152367932835595560)
+	tmp_8175353689487733453 := 73
+	tmp_7976305469002585692 := &stephen
+	(*tmp_7976305469002585692).height = &tmp_8175353689487733453
+
+	tmp_8211254607639216761 := &stephen
+	tmp_1330295997928933460 := (*tmp_8211254607639216761).height
+
+	println(*tmp_1330295997928933460)
+
+	tmp_3192161587922682755 := &stephen
+
+	if *((*tmp_3192161587922682755).User__is_old()) {
+		tmp_3651816005641979265 := "Stephen is old"
+		println(*&tmp_3651816005641979265)
+	} else {
+
+		tmp_286320284431439979 := "Stephen is young"
+		println(*&tmp_286320284431439979)
+	}
+
+	tmp_6419075023523112259 := &stephen
+
+	(*tmp_6419075023523112259).User__make_older()
+
+	tmp_8860581127662105769 := &stephen
+
+	if *((*tmp_8860581127662105769).User__is_old()) {
+		tmp_8489902106938695875 := "Stephen is old"
+		println(*&tmp_8489902106938695875)
+	}
+
+}
+func (my *User) User__make_older() {
+
+	tmp_2861391897282324475 := &my
+	tmp_5447851695057989743 := (*tmp_2861391897282324475).age
+
+	tmp_5134325039177141690 := 1
+	tmp_3910187507312597662 := *tmp_5447851695057989743 + *&tmp_5134325039177141690
+	tmp_628303324353860165 := &my
+	(*tmp_628303324353860165).age = &tmp_3910187507312597662
+
+}
+
+func (my *User) User__is_old() Bool {
+
+	tmp_3602583590299280641 := &my
+	tmp_3452337755216291150 := (*tmp_3602583590299280641).age
+
+	tmp_5008436610057606955 := 30
+	tmp_1025476952255935310 := *tmp_3452337755216291150 >= *&tmp_5008436610057606955
+	return &tmp_1025476952255935310
+}
+
+\end{verbatim}
+
+\subsection*{6.2 Test Suites}
+
+The RAPID project utilized a complex test suite including multiple levels of integration testing. Tests in the \textbf{/parser} directory would only run the parser, tests in the \textbf{/sast} directory would invoke the parser and the semantic checker, and tests in the \textbf{/compiler} directory would do full compilation and output checking.
+
+\subsection*{6.3 Why and How}
+
+The test suite was used to ensure no regressions occured in the test suite and also as a means for guiding development. Most group members practiced Test Driven Development (TDD) in which they wrote failing test and then wrote code in the compiler to fix those failing tests.
+
+The reason we had multiple levels of testing is so that members of the team could submit pull requests which would implement features only partially in the pipeline (implement only the parsing support, for example.)
+
+\subsection*{6.4 Automation}
+
+Our test suite ran for every pull request on our project using a tool called Travis CI, which would add the result of the test suite next to the pull request itself on the Github interface.
+This insured that we would not inadvertently commit broken code.
+In addition, the full test suite was run whenever the compiler was built using the \textbf{Make} command.
+
+\subsection*{6.5 Testing Roles}
+Each member of the team was responsible for writing and fully testing their own code through all the pipeline layers.

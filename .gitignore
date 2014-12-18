@@ -13,3 +13,5 @@ code.tex
 *.fls
 *.d
 
+.texpadtmp/
+
