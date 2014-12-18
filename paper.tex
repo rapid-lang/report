@@ -4,6 +4,8 @@
 \usepackage{alltt,epsfig,amsmath,amssymb}
 % one inch margins
 \usepackage{fullpage}
+\usepackage{longtable}
+\usepackage{booktabs}
 
 \usepackage{listings}
 \lstset{
@@ -24,10 +26,10 @@
 
 \author{
   Nate Brennand (nsb2142)
-  \and Dan Schlosser (drs2126),
   \and Ben Edelstein (bie2103),
-  \and Brian Shin (ds2791),
-  \and Brendan Fish (bjf2127)
+  \and Brendan Fish (bjf2127),
+  \and Dan Schlosser (drs2126),
+  \and Brian Shin (ds2791)
 }
 \title{The RAPID Programming Language}
 
@@ -38,7 +40,7 @@
 \maketitle
 \newpage
 
-\subsection*{1. Introduction}
+\section*{1. Introduction}
 
 With increased demand in the public and private sector for cloud-connected mobile and web applications has come a rising need for web servers to maintain state across multiple devices and users.
 Development of web servers is complex, however. Building a web server using modern web server packages requires learning a server-side programming language, and then integrating a web server package and implementing required methods.
