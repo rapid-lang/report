@@ -4,14 +4,14 @@ Our LRM is provided here as originally submitted.  Please note that this
 version of the LRM does not describe all features implemented in this version
 of RAPID, rather an LRM for the language we sought to make.
 
-\subsubsection{RAPID Language Reference
+\subsubsection*{RAPID Language Reference
 Manual}\label{rapid-language-reference-manual}
 
-\subsubsection{Coms W 4115}\label{coms-w-4115}
+\subsubsection*{Coms W 4115}\label{coms-w-4115}
 
 Ben Edelstein, Brian Shin, Brendon Fish, Dan Schlosser, Nate Brennand
 
-\subsubsection{1. Introduction}\label{introduction}
+\subsubsection*{1. Introduction}\label{introduction}
 
 With increased demand in the public and private sector for
 cloud-connected mobile and web applications has come a rising need for
@@ -32,21 +32,21 @@ automatically saved in the database. This abstracts away much of the
 boiler plate code that developers typically write when building an API
 server.
 
-\subsubsection{1.1 Why RAPID?}\label{why-rapid}
+\subsubsection*{1.1 Why RAPID?}\label{why-rapid}
 
 The name RAPID represents the goal of the language: making API server
 development quick. Also, it's a recursive acronym for \emph{RAPID
 Application Programmer Interface Dialect}.
 
-\subsubsection{1.2 RAPID Programs}\label{rapid-programs}
+\subsubsection*{1.2 RAPID Programs}\label{rapid-programs}
 
 There are two types of RAPID programs, servers and scripts. If a program
 contains an HTTP method, it is a server, otherwise it is a script. (See
 more in later subsubsections).
 
-\subsubsection{2. Lexical Conventions}\label{lexical-conventions}
+\subsubsection*{2. Lexical Conventions}\label{lexical-conventions}
 
-\subsubsection{2.1 Identifiers}\label{identifiers}
+\subsubsection*{2.1 Identifiers}\label{identifiers}
 
 Identifiers must start with a letter or an underscore, followed by any
 combination of letters, numbers, and underscores.
@@ -65,7 +65,7 @@ combination of letters, numbers, and underscores.
 \texttt{ab\textbackslash{} cd}
 \end{quote}
 
-\subsubsection{2.2 Keywords}\label{keywords}
+\subsubsection*{2.2 Keywords}\label{keywords}
 
 The following identifiers are keywords in RAPID, and are reserved. They
 can not be used for any other purpose.
@@ -77,7 +77,7 @@ can not be used for any other purpose.
 \texttt{new}, \texttt{optional}, \texttt{unsafe}, \texttt{instance},
 \texttt{and}, \texttt{or}
 
-\subsubsection{2.3 Literals}\label{literals}
+\subsubsection*{2.3 Literals}\label{literals}
 
 \paragraph{Integer literals}\label{integer-literals}
 
@@ -150,7 +150,7 @@ dict<string, ing> b = {
 }
 \end{verbatim}
 
-\subsubsection{2.4 Comments}\label{comments}
+\subsubsection*{2.4 Comments}\label{comments}
 
 There are two types of comments in RAPID: single line comments, and
 block comments. Single line comments are preceded by \texttt{//} and
@@ -166,7 +166,7 @@ comment
 */
 \end{verbatim}
 
-\subsubsection{2.5 Operators}\label{operators}
+\subsubsection*{2.5 Operators}\label{operators}
 
 \begin{longtable}[c]{@{}clll@{}}
 \toprule
@@ -194,14 +194,14 @@ float\tabularnewline
 \bottomrule
 \end{longtable}
 
-\subsubsection{3. Types}\label{types}
+\subsubsection*{3. Types}\label{types}
 
-\subsubsection{3.1 Static Typing}\label{static-typing}
+\subsubsection*{3.1 Static Typing}\label{static-typing}
 
 RAPID is a statically typed language; variables must be explicitly typed
 upon declaration. Variables can be cast to other types (see Casting).
 
-\subsubsection{3.2 Primitive Types}\label{primitive-types}
+\subsubsection*{3.2 Primitive Types}\label{primitive-types}
 
 \paragraph{null}\label{null}
 
@@ -305,7 +305,7 @@ He calls himself "Batman".
 """                           // multi[0] => "\n"
 \end{verbatim}
 
-\subsubsection{3.3 Non-Primitive Types}\label{non-primitive-types}
+\subsubsection*{3.3 Non-Primitive Types}\label{non-primitive-types}
 
 \paragraph{List}\label{list}
 
@@ -536,7 +536,7 @@ Response & Message & Code & Name\tabularnewline
 Functions are first class objects, and may be passed around as variables
 (see Functions)
 
-\subsubsection{3.4 Casting}\label{casting}
+\subsubsection*{3.4 Casting}\label{casting}
 
 \paragraph{Integers and Floats}\label{integers-and-floats}
 
@@ -590,9 +590,9 @@ object & \texttt{Obj()?} & - & Objects are \texttt{true}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\subsubsection{4. Database Backing}\label{database-backing}
+\subsubsection*{4. Database Backing}\label{database-backing}
 
-\subsubsection{4.1 Classes}\label{classes}
+\subsubsection*{4.1 Classes}\label{classes}
 
 RAPID classes are backed by a PostgreSQL database. Classes are defined
 using the \texttt{class} keyword, and represent an SQL table. Instance
@@ -690,7 +690,7 @@ User bob = new User(
 )
 \end{verbatim}
 
-\subsubsection{Deletion}\label{deletion}
+\subsubsection*{Deletion}\label{deletion}
 
 All objects have an instance method, \texttt{delete()}, defined that
 will delete the database record. There is no return value for the
@@ -724,7 +724,7 @@ be persisted:
 User bob, error e = new User(bob_json)
 \end{verbatim}
 
-\subsubsection{4.2 Querying}\label{querying}
+\subsubsection*{4.2 Querying}\label{querying}
 
 Objects may be queried from the database using the \texttt{get}
 function, which is automatically defined on all classes. \texttt{get} is
@@ -760,11 +760,11 @@ In the case that the object is not found, the returned object will be
 Tweet t, error e = Tweet.get(ID="123abc")
 \end{verbatim}
 
-\subsubsection{4.3 Updates}\label{updates}
+\subsubsection*{4.3 Updates}\label{updates}
 
-\subsubsection{5. Functions}\label{functions-1}
+\subsubsection*{5. Functions}\label{functions-1}
 
-\subsubsection{5.1 Declaration}\label{declaration}
+\subsubsection*{5.1 Declaration}\label{declaration}
 
 Functions in RAPID are first-class objects, but may not be declared
 anonymously. Functions are declared using the \texttt{func} keyword. The
@@ -814,7 +814,7 @@ func printInt(int a) {
 }
 \end{verbatim}
 
-\subsubsection{5.2 Unsafe Functions}\label{unsafe-functions}
+\subsubsection*{5.2 Unsafe Functions}\label{unsafe-functions}
 
 If a function performs actions that may be unsafe, it must be preceded
 by the keyword \texttt{unsafe}. Unsafe functions return unsafe
@@ -849,12 +849,12 @@ unsafe func access(dict<string, int> d, string key) int {
 }
 \end{verbatim}
 
-\subsubsection{6. Routing}\label{routing}
+\subsubsection*{6. Routing}\label{routing}
 
 One of the core features of RAPID is it's ability to easily define
 routes for a REST API server.
 
-\subsubsection{6.1 Declaring Routes}\label{declaring-routes}
+\subsubsection*{6.1 Declaring Routes}\label{declaring-routes}
 
 Routes may be declared like functions, but substituting the
 \texttt{http} keyword for the \texttt{func} keyword. Routes specify a
@@ -888,7 +888,7 @@ The name of the function will be the name of the route. Therefore, in
 the preceding example, a \texttt{GET} request to \texttt{/echo?foo=Dog}
 will return \texttt{"Dog"}.
 
-\subsubsection{6.2 Path context}\label{path-context}
+\subsubsection*{6.2 Path context}\label{path-context}
 
 The endpoint associated with each route is determined by the combination
 of one or more blocks associated with it and the name of the route
@@ -997,15 +997,15 @@ int sqr, error _ = math.square(5)
 printf("%d", sqr)
 \end{verbatim}
 
-\subsubsection{7. Syntax}\label{syntax}
+\subsubsection*{7. Syntax}\label{syntax}
 
-\subsubsection{7.1 Program Structure}\label{program-structure}
+\subsubsection*{7.1 Program Structure}\label{program-structure}
 
 A valid RAPID program is a series of valid statements. If the program
 contains any \texttt{http} blocks, it will be interpreted as a restful
 web API, and will run a HTTP web server on \texttt{localhost:5000}.
 
-\subsubsection{7.2 Expressions}\label{expressions}
+\subsubsection*{7.2 Expressions}\label{expressions}
 
 Expressions are series of operators and operands that may be evaluated
 to a value and type. Any subexpressions are evaluated from left to
@@ -1067,7 +1067,7 @@ Operators).
 
 Parenthesis may be used to alter the order of operand evaluation.
 
-\subsubsection{7.3 Statements}\label{statements}
+\subsubsection*{7.3 Statements}\label{statements}
 
 \paragraph{Assignments}\label{assignments}
 
@@ -1317,9 +1317,9 @@ while (/* expression */) {
 }
 \end{verbatim}
 
-\subsubsection{8. Built-in Functions}\label{built-in-functions}
+\subsubsection*{8. Built-in Functions}\label{built-in-functions}
 
-\subsubsection{8.1 length()}\label{length}
+\subsubsection*{8.1 length()}\label{length}
 
 \begin{verbatim}
 func length(string s) int
@@ -1344,7 +1344,7 @@ length({"a":0, "b":null, "c": False, "d": ""}) // 4
 Taking the \texttt{length} of a \texttt{null} value will return
 \texttt{null}
 
-\subsubsection{8.2 range()}\label{range}
+\subsubsection*{8.2 range()}\label{range}
 
 \begin{verbatim}
 func range(int stop) int[]
@@ -1368,7 +1368,7 @@ range(3,7,2)   // [3,5]
 range(10,4,-2) // [10,8,6]
 \end{verbatim}
 
-\subsubsection{8.3 Output Functions}\label{output-functions}
+\subsubsection*{8.3 Output Functions}\label{output-functions}
 
 There are four methods of outputing from the server. They all accept a
 format string as the first argument and optional additional arguments
@@ -1385,7 +1385,7 @@ for format strings.
 \texttt{printf} does not include a newline at the end of the output. The
 output is directed to STDOUT.
 
-\subsubsection{Logging Functions}\label{logging-functions}
+\subsubsection*{Logging Functions}\label{logging-functions}
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -1407,9 +1407,9 @@ log.info("Hello, %s", "world")
 // 2009/11/10 23:00:00 INFO: Hello, world
 \end{verbatim}
 
-\subsubsection{9. Standard Library}\label{standard-library}
+\subsubsection*{9. Standard Library}\label{standard-library}
 
-\subsubsection{9.1 string}\label{string}
+\subsubsection*{9.1 string}\label{string}
 
 \paragraph{string.is\_empty()}\label{string.isux5fempty}
 
@@ -1510,7 +1510,7 @@ a[3:99]   // "dog"
 a[50:99]   // error
 \end{verbatim}
 
-\subsubsection{9.2 list}\label{list-1}
+\subsubsection*{9.2 list}\label{list-1}
 
 \paragraph{list.is\_empty()}\label{list.isux5fempty}
 
@@ -1666,7 +1666,7 @@ if (!e?) {
 // prints 234
 \end{verbatim}
 
-\subsubsection{9.3 dict}\label{dict}
+\subsubsection*{9.3 dict}\label{dict}
 
 \paragraph{dict.is\_empty()}\label{dict.isux5fempty}
 
@@ -1809,7 +1809,7 @@ for (int k, v in d) {
 // prints a:1, b:2,
 \end{verbatim}
 
-\subsubsection{9.4 error}\label{error}
+\subsubsection*{9.4 error}\label{error}
 
 \paragraph{error.message}\label{error.message}
 
@@ -1862,7 +1862,7 @@ error e = error(message="There was an error with that Request.",
 e.name      // "RequestError"
 \end{verbatim}
 
-\subsubsection{10. Program Execution}\label{program-execution}
+\subsubsection*{10. Program Execution}\label{program-execution}
 
 RAPID programs compile to a Go executable which is a platform specific
 binary. Statements will be executed in order of their declaration. If a

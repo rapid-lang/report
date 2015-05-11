@@ -1,0 +1,122 @@
+\subsection*{Variables}\label{variables}
+
+\begin{verbatim}
+int x = 5;
+string b = "hello world";
+boolean f = false;
+float pi = 3.14;
+\end{verbatim}
+
+\subsection*{Casting}\label{casting}
+
+\subsubsection*{Float \textless{}-\textgreater{} Int}\label{float---int}
+
+\begin{verbatim}
+float f = 7.5
+int i = 3
+float f = float(i) // f == 3.0
+int i = int(f)     // i == 7
+\end{verbatim}
+
+\subsubsection*{Boolean Casting}\label{boolean-casting}
+
+Boolean casting is accomplished using the \texttt{?} operator. All
+primitive types and lists can be cast to boolean.
+
+\begin{verbatim}
+int i = 7;
+i? // true
+
+String s = "Rapid Rocks";
+s? // true
+
+String e = "";
+e? // false
+\end{verbatim}
+
+\subsection*{Lists}\label{lists}
+
+\begin{verbatim}
+list<int> a = [1,2,3,4];
+list<string> b = ["hello", "world"];
+\end{verbatim}
+
+\subsection*{Comments}\label{comments}
+
+\begin{verbatim}
+// This is a single line comment
+
+/*
+This is a multi-line
+comment
+/* They may be nested */
+*/
+\end{verbatim}
+
+\subsection*{Simple function example}\label{simple-function-example}
+
+\begin{verbatim}
+func gcd(int p, int q) int {
+    while (q != 0) {
+        int temp = q;
+        q = p % q;
+        p = temp;
+    }
+    return p;
+}
+\end{verbatim}
+
+\subsection*{Simple GCD Server}\label{simple-gcd-server}
+
+\begin{verbatim}
+func gcd(int p, int q) int {
+    while (q != 0) {
+        int temp = q;
+        q = p % q;
+        p = temp;
+    }
+    return p;
+}
+
+namespace gcd {
+  param int a {
+    param int b {
+      http (int a, int b) int {
+        int res = gcd(a, b);
+        return res;
+        }
+      }
+    }
+}
+\end{verbatim}
+
+Here, the namespace represents an http route, and the params represent
+inputs with that route. For example, sending a get request to
+\texttt{http://hostname:8080/gcd/15/20} would return 5.
+
+\subsection*{Simple Object Oriented
+Programming}\label{simple-object-oriented-programming}
+
+\begin{verbatim}
+class User {
+    int age;
+    string name = "Stephen";
+    optional int height;
+
+    instance my {
+        func is_old() boolean {
+            return (my.age >= 30);
+        }
+        func make_older() {
+           my.age = my.age + 1;
+        }
+    }
+}
+
+User bob = new User(age=29);
+println(bob.age)
+\end{verbatim}
+
+Instance methods are called by using dot notation
+(\texttt{bob.is\_old()}) and from within an object by using the instance
+name befor the dot (\texttt{my.is\_old()}).

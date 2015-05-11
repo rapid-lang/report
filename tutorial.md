@@ -7,8 +7,8 @@ int x = 5;
 string b = "hello world";
 boolean f = false;
 float pi = 3.14;
-
 ```
+
 ##Casting
 
 ###Float <-> Int
@@ -21,6 +21,8 @@ int i = int(f)     // i == 7
 
 ###Boolean Casting
 
+Boolean casting is accomplished using the `?` operator. All primitive types and lists can be cast to boolean.
+
 ```
 int i = 7;
 i? // true
@@ -31,7 +33,6 @@ s? // true
 String e = "";
 e? // false
 ```
-Boolean casting is accomplished using the ```?``` operator. All primitive types and lists can be cast to boolean. 
 
 ##Lists
 
@@ -66,6 +67,15 @@ func gcd(int p, int q) int {
 ##Simple GCD Server
 
 ```
+func gcd(int p, int q) int {
+    while (q != 0) {
+        int temp = q;
+        q = p % q;
+        p = temp;
+    }
+    return p;
+}
+
 namespace gcd {
   param int a {
     param int b {
@@ -77,7 +87,8 @@ namespace gcd {
     }
 }
 ```
-Here, the namespace represents an http route, and the params represent inputs with that route. For example, sending a get request to ```http://hostname/gcd/15/20``` would return 5.
+
+Here, the namespace represents an http route, and the params represent inputs with that route. For example, sending a get request to `http://hostname:8080/gcd/15/20` would return 5.
 
 
 ##Simple Object Oriented Programming
@@ -97,7 +108,10 @@ class User {
     }
 }
 
+User bob = new User(age=29);
+println(bob.age)
 ```
-Instance methods are called by using dot notation (```User.is_old()```) and from within an object by using the instance name befor the dot (```my.is_old()```).
+
+Instance methods are called by using dot notation (`bob.is_old()`) and from within an object by using the instance name befor the dot (`my.is_old()`).
 
 
